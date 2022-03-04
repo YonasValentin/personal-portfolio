@@ -1,0 +1,206 @@
+.hero-section {
+  @include container();
+
+  @include media('>=tablet_portrait') {
+    margin-top: 88px;
+    margin-bottom: 144px;
+  }
+
+  @include media('>=tablet') {
+    margin-top: 104px;
+    margin-bottom: 192px;
+  }
+
+  @include media('>=laptop') {
+    margin-top: 160px;
+    margin-bottom: 312px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+
+    @include media('>=tablet_portrait') {
+      grid-template-columns: repeat(8, 1fr);
+      align-items: center;
+    }
+
+    @include media('>=laptop') {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    @include media('>=tablet_portrait') {
+      grid-column: 6 / span 2;
+      grid-row: 1 / span 4;
+      padding: unset;
+      position: absolute;
+    }
+
+    @include media('>=laptop') {
+      grid-column: 8 / span 4;
+    }
+
+    &:before {
+      content: '';
+      background-image: url('./img/Group-39.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      // display: block;
+      // outline: 2px solid $color__neon-green;
+      width: 70%;
+      height: 100%;
+      position: absolute;
+      //  border-radius: 8px;
+      z-index: -1;
+      top: 12%;
+      background-position: bottom right;
+      left: 32%;
+
+      @include media('>=tablet_portrait') {
+        width: 100%;
+        top: 14%;
+        left: 17%;
+      }
+    }
+
+    &:after {
+      content: '';
+      background-image: url('./img/Group-25.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 70%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      background-position: top left;
+      right: 30%;
+      bottom: 10%;
+
+      @include media('>=tablet_portrait') {
+        right: 40%;
+        bottom: 8%;
+      }
+    }
+
+    img {
+      border-radius: 8px;
+      width: 80%;
+
+      @include media('>=tablet_portrait') {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__first-heading {
+    @include heading-h2;
+
+    @include media('>=tablet_portrait') {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
+
+    @include media('>=laptop') {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__secound-heading {
+    color: $color__neon-green;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 8px;
+
+    @include media('>=tablet_portrait') {
+      grid-column: 1 / span 4;
+      grid-row: 2;
+    }
+
+    @include media('>=laptop') {
+      margin-bottom: 16px;
+      grid-column: 1 / span 5;
+    }
+  }
+
+  &__third-heading {
+    @include heading-h2;
+    margin-bottom: 16%;
+
+    @include media('>=tablet_portrait') {
+      grid-column: 1 / span 4;
+      grid-row: 3;
+      margin-bottom: 40px;
+    }
+
+    @include media('>=laptop') {
+      grid-column: 1 / span 5;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    gap: 24px;
+    margin-top: 24%;
+
+    @include media('>=tablet_portrait') {
+      margin-top: 0;
+      grid-column: 1 / span 4;
+      grid-row: 4;
+    }
+
+    @include media('>=laptop') {
+      grid-column: 1 / span 4;
+    }
+
+    @include media('>=desktop') {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  &__prim-button {
+    @include prim-button;
+    min-width: 152px;
+  }
+
+  &__sec-button {
+    min-width: 152px;
+    padding: 16px;
+    font-size: 14px;
+    background: white;
+    color: $color__neon-green;
+    border: 1px solid $color__neon-green;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      background: $color__neon-green;
+      color: white;
+      outline: 1px solid white;
+      outline-offset: -1px;
+
+      &:before {
+        background: white;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      background: $color__neon-green;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: -1;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.site {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.site-main {
+  margin-top: 24px;
+  @include media('>=desktop') {
+    padding-top: 64px;
+  }
+}

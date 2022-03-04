@@ -1,0 +1,132 @@
+.contact-section {
+  @include container;
+
+  &__container {
+    display: grid;
+    grid-row-gap: 24px;
+  }
+
+  h2 {
+    color: white;
+
+    @include media('>=tablet_portrait') {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  p {
+    color: #9cadda;
+
+    @include media('>=tablet_portrait') {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  form {
+    display: grid;
+    grid-row-gap: 16px;
+
+    @include media('>=tablet_portrait') {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  .fname {
+    @include media('>=tablet_portrait') {
+      grid-column: 1 / 4;
+    }
+  }
+
+  .email {
+    @include media('>=tablet_portrait') {
+      grid-column: 5 / -1;
+    }
+  }
+
+  .subject {
+    @include media('>=tablet_portrait') {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .message {
+    @include media('>=tablet_portrait') {
+      grid-column: 1 / -1;
+    }
+  }
+  .input-wrapper {
+    position: relative;
+    input {
+      padding: 16px;
+      width: 100%;
+      background: #36488d;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      outline: 1px solid #9cadda;
+      width: 100%;
+      height: 100%;
+      top: 8px;
+      left: 8px;
+      z-index: -1;
+    }
+  }
+
+  .textarea-wrapper {
+    position: relative;
+
+    textarea {
+      resize: none;
+      padding: 16px;
+      width: 100%;
+      background: #36488d;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      outline: 1px solid #9cadda;
+      width: 100%;
+      height: 100%;
+      top: 8px;
+      left: 8px;
+      z-index: -1;
+    }
+  }
+
+  .submit-wrapper {
+    position: relative;
+    justify-self: start;
+    input[type='submit'] {
+      @include prim-button;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      outline: 1px solid $color__neon-green;
+      outline-offset: -2px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+  }
+}

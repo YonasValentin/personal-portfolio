@@ -1,0 +1,17 @@
+@mixin heading-h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+
+  @include media('>=laptop') {
+    margin-bottom: 16px;
+  }
+}
+
+@mixin text-purple {
+  color: #9cadda;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}

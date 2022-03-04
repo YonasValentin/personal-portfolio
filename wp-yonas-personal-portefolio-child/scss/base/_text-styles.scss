@@ -1,0 +1,109 @@
+// Font loaded from libraries.yml
+
+$text-style__font-header: 'objektiv-mk1', sans-serif;
+$text-style__font-text: 'Roboto Slab', sans-serif;
+
+$text-style__margin: 0 0 16px 0;
+
+@mixin heading {
+  font-family: $text-style__font-header;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.33em;
+  margin: $text-style__margin;
+  color: $color__blue;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+
+  // headings in text content
+  margin-top: 32px;
+
+  & + h1,
+  & + h2,
+  & + h3,
+  & + h4,
+  & + h5,
+  & + h6,
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin heading-h1 {
+  @include heading;
+  font-size: clamp(40px, calc(4vw + 10px), 56px);
+}
+
+@mixin heading-h2 {
+  @include heading;
+  font-size: clamp(40px, calc(4vw + 10px), 48px);
+}
+
+@mixin heading-h3 {
+  @include heading;
+  font-size: 32px;
+}
+
+@mixin heading-h4 {
+  @include heading;
+  font-size: 24px;
+}
+
+@mixin heading-h5 {
+  @include heading;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@mixin heading-h6 {
+  @include heading;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+@mixin text {
+  font-family: $text-style__font-text;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5em;
+  margin: $text-style__margin;
+  -webkit-font-smoothing: antialiased;
+  color: rgba($color__black, 0.64);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin text-teaser {
+  @include text;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: $color__blue;
+}
+
+@mixin text-link {
+  @include text;
+  position: relative;
+  display: inline-block;
+  font-weight: normal;
+  text-decoration: underline;
+  cursor: pointer;
+  color: $color__purple;
+}
+
+@mixin text-button {
+  font-family: $text-style__font-header;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  color: $color__white;
+  -webkit-font-smoothing: antialiased;
+}

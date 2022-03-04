@@ -1,0 +1,27 @@
+.mob-menu-header-holder {
+  background: #243665 !important;
+}
+.mob-icon-menu {
+  color: $color__neon-green !important;
+}
+.mob-menu-logo-holder {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mobmenul-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: static !important;
+}
+
+.mob-menu-left-bg-holder {
+  background: #243665 !important;
+}
+
+.mob-cancel-button {
+  color: $color__neon-green !important;
+}

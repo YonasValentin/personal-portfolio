@@ -1,0 +1,114 @@
+.about-section {
+  @include container;
+  margin-bottom: 104px;
+  @include media('>=laptop') {
+    margin-bottom: 248px;
+  }
+
+  &__container {
+    position: relative;
+
+    @include media('>=tablet') {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: center;
+    }
+  }
+
+  &__first-heading {
+    @include heading-h2;
+
+    @include media('>=tablet') {
+      font-size: 32px;
+      grid-column: 7 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__text-area {
+    @include text-purple;
+    margin-bottom: 32px;
+
+    @include media('>=tablet_portrait') {
+      max-width: 608px;
+    }
+
+    @include media('>=tablet') {
+      grid-column: 7 / -1;
+      grid-row: 2;
+    }
+  }
+
+  &__img-container {
+    margin-bottom: 32px;
+
+    @include media('>=tablet_portrait') {
+      display: flex;
+    }
+
+    @include media('>=tablet') {
+      position: absolute;
+      grid-column: 1 / span 5;
+    }
+  }
+
+  &__skills-heading {
+    color: $color__neon-green;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    margin-bottom: 24px;
+
+    @include media('>=laptop') {
+      font-size: 24px;
+    }
+  }
+
+  &__skills-container {
+    @include media('>=tablet') {
+      grid-column: 7 / -1;
+      grid-row: 3;
+    }
+  }
+
+  &__skill-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 16px;
+    padding-left: 16px;
+    margin-bottom: 40px;
+
+    @include media('>=tablet_portrait') {
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: 24px;
+    }
+  }
+
+  &__skill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    color: white;
+
+    @include media('>=laptop') {
+      font-size: 18px;
+    }
+
+    i {
+      color: $color__neon-green;
+      font-size: 16px;
+
+      @include media('>=tablet_portrait') {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__button {
+    @include prim-button;
+    min-width: 152px;
+  }
+}

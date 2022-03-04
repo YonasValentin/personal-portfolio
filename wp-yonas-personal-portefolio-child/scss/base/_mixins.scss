@@ -1,0 +1,25 @@
+@mixin container() {
+  //max-width: 1120px; //calc(1088px + 64px + 64px); // 10 cols
+  margin: 0 auto 72px;
+  padding: 0 20px 0 19px;
+
+  @include media('>=tablet_portrait') {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  @include media('>=tablet') {
+    padding-right: 44px;
+    padding-left: 44px;
+  }
+
+  @include media('>=laptop') {
+    padding-right: 128px;
+    padding-left: 128px;
+  }
+
+  @include media('>=desktop') {
+    padding-right: 160px;
+    padding-left: 160px;
+  }
+}
